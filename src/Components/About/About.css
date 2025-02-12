@@ -28,3 +28,9 @@
     display: flex;
     gap: 80px;
 }
+
+.about-right{
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+}

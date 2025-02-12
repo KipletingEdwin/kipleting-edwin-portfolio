@@ -15,8 +15,12 @@ const About = () => {
           <div className="about-left"> 
             <img src={profile_img} alt="profile-img" />
           </div>
-          <div className="about-right">
-            
+          <div className="about-right"> 
+            <div className="about-para">
+              <p> I am experienced Frontend Developer with over </p>
+              <p> My passion for frontend development is not only</p>
+            </div>
+
           </div>
         </div>
     </div>

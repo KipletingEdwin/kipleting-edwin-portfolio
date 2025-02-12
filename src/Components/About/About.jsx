@@ -2,7 +2,7 @@ import React from 'react'
 import './About.css'
 import theme_pattern from '../../assets/theme_pattern.svg'
 import profile_img from '../../assets/about_profile.svg'
-import profile_img from '../../assets/about_profile.svg'
+
 
 const About = () => {
   return (
@@ -20,7 +20,10 @@ const About = () => {
               <p> I am experienced Frontend Developer with over </p>
               <p> My passion for frontend development is not only</p>
             </div>
+          </div> 
 
+          <div className="about-skills"> 
+            <div className="about-skill"><p> HTML & CSS </p> <hr style={{width: "50%"}}  /> </div>
           </div>
         </div>
     </div>

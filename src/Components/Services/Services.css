@@ -34,4 +34,16 @@
     border: 2px solid white;
     transition: 0.4s;
     cursor: pointer;
+} 
+
+.services-container{ 
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 80px;
+}
+
+.services_format h3{
+    font-size: 28px;
+    font-weight: 600;
 }

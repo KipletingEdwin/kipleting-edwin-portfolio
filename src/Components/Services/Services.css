@@ -22,4 +22,16 @@
     bottom: 0;
     right: 0;
     z-index: -1;
+} 
+
+.services_format{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    padding: 60px;
+    border-radius: 10px;
+    border: 2px solid white;
+    transition: 0.4s;
+    cursor: pointer;
 }

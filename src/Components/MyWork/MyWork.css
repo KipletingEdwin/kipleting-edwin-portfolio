@@ -15,4 +15,11 @@
     padding: 0px 30px;
     font-size: 80px;
     font-weight: 600;
+} 
+
+.mywork-title img{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
 }

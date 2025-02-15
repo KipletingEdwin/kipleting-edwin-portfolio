@@ -19,4 +19,13 @@
     display: flex;
     align-items: center;
     gap: 35px;
+} 
+
+.footer-email-input{
+    display: flex;
+    gap: 30px;
+    padding: 20px 30px;
+    border-radius: 50px;
+    background: #32323B;
+    padding-right: 80px;
 }

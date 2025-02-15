@@ -24,9 +24,9 @@ const Footer = () => {
       <div className="footer-bottom">
         <p className="footer-bottom-left">&copy; 2025 Kipleting Edwin. All rights reserved. </p> 
         <div className="footer-bottom-right">
-          <p> </p>
-          <p> </p> 
-          <p> </p>
+          <p> Term of Services</p>
+          <p> Privacy Policy</p> 
+          <p> Connect with me</p>
         </div>
       </div>
     </div>

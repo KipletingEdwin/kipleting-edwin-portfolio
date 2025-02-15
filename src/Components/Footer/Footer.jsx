@@ -20,6 +20,15 @@ const Footer = () => {
 
         </div>
       </div>
+
+      <div className="footer-bottom">
+        <p className="footer-bottom-left">&copy; 2025 Kipleting Edwin. All rights reserved. </p> 
+        <div className="footer-bottom-right">
+          <p> </p>
+          <p> </p> 
+          <p> </p>
+        </div>
+      </div>
     </div>
   )
 }

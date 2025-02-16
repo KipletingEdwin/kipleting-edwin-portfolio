@@ -14,9 +14,9 @@ const Navbar = () => {
   return (
     <div className="navbar">
       <img src={logo} alt="logo" /> 
-      <img src={menu_open} alt="img"/>
+      <img src={menu_open} alt="img" className="nav-mob-open"/>
       <ul className="nav-menu"> 
-        <img src={menu_close} alt="" className="nav-mob-close" />
+        <img src={menu_close} alt="" className="nav-mob-close"  />
         <li>  <AnchorLink  className="anchor-link" href="#home"  >   <p onClick={()=>setMenu("home")} > Home </p>  </AnchorLink>  {menu==="home"?<img src={underline} alt="home "/>:<></> } </li>
         <li> <AnchorLink  className="anchor-link" offset={50} href="#about" >  <p onClick={()=>setMenu("about")} > About Me </p> </AnchorLink>  {menu==="about"?<img src={underline} alt="about "/>:<></> }</li>
         <li>  <AnchorLink  className="anchor-link" offset={50} href="#services" > <p onClick={()=>setMenu("services")} >Services</p>  </AnchorLink>  {menu==="services"?<img src={underline} alt="services "/>:<></> }</li>

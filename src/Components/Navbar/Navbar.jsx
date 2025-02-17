@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import "./Navbar.css";
 import logo from "../../assets/edwin.svg";
 import underline from '../../assets/nav_underline.svg'
@@ -8,7 +8,12 @@ import menu_close from '../../assets/menu_close.svg'
 
 const Navbar = () => {
 
-  const[menu, setMenu] = useState("home");
+  const[menu, setMenu] = useState("home"); 
+  const menuRef = useRef(); 
+
+  const openMenu = () =>{
+    menuRef.current.style.right="0";
+  }
 
 
   return (

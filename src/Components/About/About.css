@@ -123,5 +123,14 @@
         padding: 0;
     }
 
+    .about-title img{
+        width: 130px; 
+        right: -20px;
+    } 
+
+    .about-sections{
+        flex-direction: column;
+    }
+
 
 }

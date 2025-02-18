@@ -93,6 +93,11 @@
     .services_title img{
         width: 130px;
         margin-right: -20px;
+    } 
+
+    .services_format{
+        gap: 20px;
+        padding: 32px;
     }
 
 

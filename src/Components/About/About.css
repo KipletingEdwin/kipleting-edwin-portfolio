@@ -160,6 +160,11 @@
 
     .about-achievement{
         gap: 10px;
+    } 
+
+    .about-achievement h1{
+        font-size: 34px;
+        font-weight: 700;
     }
     
 

@@ -148,7 +148,11 @@
 
     .about-skill p{
             font-size: 20px;
-        }
+        } 
+
+    .about-skill hr{
+        height: 6px;
+    }
     
 
 

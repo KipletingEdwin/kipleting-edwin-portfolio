@@ -139,6 +139,11 @@
     .about-para{
         font-size: 18px;
         line-height: 32px;
+    } 
+
+    .about-skill{
+        gap: 20px;
+        align-items: center;
     }
 
 

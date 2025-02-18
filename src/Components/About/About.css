@@ -130,6 +130,15 @@
 
     .about-sections{
         flex-direction: column;
+    } 
+
+    .about-left{
+        display: none;
+    } 
+
+    .about-para{
+        font-size: 18px;
+        line-height: 32px;
     }
 
 

@@ -98,6 +98,16 @@
     .services_format{
         gap: 20px;
         padding: 32px;
+    } 
+
+    .services_format p{
+        font-size: 28px;
+    }
+
+    .services_format p{
+        font-size: 18px;
+        line-height: 32px;
+        max-width: 300px;
     }
 
 

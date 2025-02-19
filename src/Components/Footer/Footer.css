@@ -29,7 +29,6 @@
     background: #32323B;
     box-sizing: border-box;
     max-width: 100%;
-    /* padding-right: 80px; */
 } 
 
 .footer-email-input input{
@@ -74,7 +73,6 @@
 @media (max-width: 768px){
     .footer{
         margin: 50px 20px;
-        /* background-color: red; */
     } 
 
     .footer-top{
@@ -91,14 +89,7 @@
     .footer-top-right{
         display: flex;
         flex-direction: column;
-        /* background-color: yellow; */
     }
-
-    /* .footer-email-input{
-        background-color: red;
-    } */
-
-
 
 
 }

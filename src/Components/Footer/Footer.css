@@ -71,7 +71,8 @@
 
 @media (max-width: 768px){
     .footer{
-        margin: 50px 70px;
+        margin: 50px 20px;
+        /* background-color: red; */
     } 
 
     .footer-top{
@@ -84,6 +85,16 @@
         flex-direction: column-reverse;
         margin-bottom: 50px;
     } 
+
+    .footer-top-right{
+        display: flex;
+        flex-direction: column;
+        background-color: yellow;
+    }
+
+    .footer-email-input{
+        background-color: red;
+    }
 
 
 

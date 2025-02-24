@@ -1,11 +1,11 @@
-.navbar{
+.navbar {
     display: flex;
     align-items: center; 
     justify-content: space-between;
     margin: 20px 170px;
 }
 
-.nav-menu{
+.nav-menu {
     display: flex;
     align-items: center;
     list-style: none;
@@ -13,88 +13,106 @@
     font-size: 20px;
 }
 
-.nav-connect{
-    padding: 20px 40px;
+.nav-connect {
+    padding: 15px 35px;
     border-radius: 50px;
     background: linear-gradient(267deg,#DA7C25 0.36%, #B923E1 102.06%);
-    font-size: 22px;
+    font-size: 20px;
     cursor: pointer;
-    transition: 0.5s;
+    transition: 0.3s ease-in-out;
+    color: white;
 }
 
-.nav-connect:hover{
+.nav-connect:hover {
     transform: scale(1.05);
+    opacity: 0.9;
 }
 
-.nav-menu li{
+.nav-menu li {
     display: flex;
     flex-direction: column;
     gap: 5px;
     cursor: pointer;
+    transition: 0.3s ease-in-out;
 }
 
-.nav-menu li img{
+.nav-menu li:hover {
+    opacity: 0.8;
+}
+
+.nav-menu li img {
     display: flex;
     margin: auto;
-} 
-
-.anchor-link{
-    text-decoration: none;
-    color: white;
-} 
-
-.nav-mob-close{
-    display: none;
-} 
-
-.nav-mob-open{
-    display: none;
 }
 
-@media(max-width:768px){
+.anchor-link {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s ease-in-out;
+}
 
-    .navbar{
+.anchor-link:hover {
+    color: #DA7C25;
+}
+
+.nav-mob-open {
+    display: none;
+    cursor: pointer;
+}
+
+.nav-mob-close {
+    display: none;
+    cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
         margin: 20px 50px;
     }
 
-    .nav-connect{
+    .nav-connect {
         display: none;
-    } 
+    }
 
-    .nav-mob-open{
+    .nav-mob-open {
         display: block; 
         position: fixed;
-        right: 30px;
-    } 
+        right: 20px;
+        top: 20px;
+        z-index: 5;
+        width: 40px;
+    }
 
-    .nav-mob-close{
+    .nav-mob-close {
         display: block;
-        position: relative; 
-        top: 30px;
-        left: 290px;
+        position: absolute;
+        top: 20px;
+        right: 20px;
         width: 30px;
-    } 
+    }
 
-    .nav-menu{
+    .nav-menu {
         position: fixed;
         flex-direction: column;
-        align-items: start;
+        align-items: center;
+        justify-content: center;
         top: 0;
-        gap: 30px;
-        background-color: #1F0016;
-        width: 350px;
-        height: 100%;
-        z-index: 2; 
-        transition: right 0.5s; 
-        right: -350px;
-    } 
-
-    .nav-menu li{
-        font-size: 30px;
+        right: -100%;
+        background-color: rgba(31, 0, 22, 0.9);
+        width: 100%;
+        height: 100vh;
+        z-index: 10;
+        transition: right 0.5s ease-in-out;
+        padding-top: 50px;
     }
-    
 
+    .nav-menu.open {
+        right: 0;
+    }
 
-
-
+    .nav-menu li {
+        font-size: 24px;
+        padding: 10px 0;
+    }
 }

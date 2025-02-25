@@ -71,6 +71,7 @@
     .hero img{
         margin-bottom: 120px;
         width: 260px;
+        border-radius: 1%;
     } 
 
     .hero h1{

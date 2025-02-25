@@ -61,46 +61,61 @@
     border-color: #B415FF;
 }
 
-@media(max-width:768px){
-
-    .hero img{
-        margin-bottom: 120px;
-        width: 260px;
+@media (max-width: 768px) {
+    .hero img {
+        margin-bottom: 100px;
+        width: 200px; /* Reduce image size slightly for mobile */
     } 
 
-    .hero h1{
-        margin-top: 120px;
+    .hero h1 {
+        margin-top: 100px;
         width: 90%;
-        font-size: 50px;
+        font-size: 42px; /* Reduce text size slightly */
     } 
 
-    .hero p{
-        width: 60%;
-        font-size: 18px;
-        line-height: 32px;
+    .hero p {
+        width: 75%; /* Make text block wider for better readability */
+        font-size: 16px;
+        line-height: 28px;
         margin: 10px 0px;
     } 
 
-    .hero-action{
-        gap: 16px;
-        font-size: 18px;
+    .hero-action {
+        display: flex;
+        flex-wrap: wrap; /* Ensure buttons wrap on small screens */
+        justify-content: center;
+        gap: 12px; /* Reduce gap to fit better */
+        font-size: 16px; /* Reduce font size slightly */
         font-weight: 500;
         margin-bottom: 50px;
     } 
 
-    .hero-connect{
-        padding: 20px 30px;
-        border-radius: 40px;
+    .hero-connect {
+        padding: 14px 20px; /* Reduce padding for small screens */
+        border-radius: 35px;
+        width: 45%; /* Ensure width scales */
+        text-align: center;
     } 
 
-    .hero-resume{
-        padding: 20px 40px;
-        border-radius: 40px;
+    .hero-resume {
+        padding: 14px 25px;
+        border-radius: 35px;
+        width: 45%;
+        text-align: center;
     }
 
-
-
-
-
-
+    /* Extra small devices (≤480px) */
+    @media (max-width: 480px) {
+        .hero h1 {
+            font-size: 35px; /* Reduce text size further */
+        }
+        .hero p {
+            width: 85%;
+            font-size: 14px;
+        }
+        .hero-connect, .hero-resume {
+            width: 100%; /* Stack buttons vertically on very small screens */
+            font-size: 14px;
+        }
+    }
 }

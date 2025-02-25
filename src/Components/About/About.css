@@ -29,6 +29,10 @@
     gap: 80px;
 }
 
+.about-left img{
+    height: 400px;
+}
+
 .about-right{
     display: flex;
     flex-direction: column;
@@ -135,6 +139,7 @@
     .about-left{
         display: none;
     } 
+
 
     .about-para{
         font-size: 18px;

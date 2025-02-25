@@ -4,33 +4,29 @@ import theme_pattern from "../../assets/theme_pattern.svg";
 import mail_icon from "../../assets/mail_icon.svg";
 import location_icon from "../../assets/location_icon.svg";
 import call_icon from "../../assets/call_icon.svg";
-import emailjs from "@emailjs/browser"; // ✅ Import EmailJS
+import emailjs from "@emailjs/browser"; 
 
-// Import Toastify
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Contact = () => {
-  const [result, setResult] = useState(""); // Stores the form result
+  const [result, setResult] = useState(""); 
 
   const onSubmit = async (event) => {
     event.preventDefault();
     setResult("Sending...");
 
-    // ✅ Prepare form data for EmailJS
     const formData = {
       name: event.target.name.value,
       email: event.target.email.value,
       message: event.target.message.value,
     };
 
-    // Basic validation
     if (!formData.name || !formData.email || !formData.message) {
       toast.error("All fields are required! 🚨", { position: "top-center" });
       return;
     }
 
-    // Email format validation
     if (!/\S+@\S+\.\S+/.test(formData.email)) {
       toast.error("Invalid email format! ❌", { position: "top-center" });
       return;
@@ -50,7 +46,7 @@ const Contact = () => {
       if (response.status === 200) {
         setResult("Form Submitted Successfully!");
         toast.success("✅ Message sent successfully!", { position: "top-center" });
-        event.target.reset(); // ✅ Reset form after submission
+        event.target.reset(); 
       } else {
         throw new Error("Email sending failed");
       }

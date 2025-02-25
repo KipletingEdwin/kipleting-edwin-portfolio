@@ -4,6 +4,7 @@ import theme_pattern from "../../assets/theme_pattern.svg";
 import mail_icon from "../../assets/mail_icon.svg";
 import location_icon from "../../assets/location_icon.svg";
 import call_icon from "../../assets/call_icon.svg";
+import emailjs from "@emailjs/browser"; // ✅ Import EmailJS
 
 // Import Toastify
 import { ToastContainer, toast } from "react-toastify";
@@ -16,59 +17,45 @@ const Contact = () => {
     event.preventDefault();
     setResult("Sending...");
 
-    const formData = new FormData(event.target);
-
-    // ✅ Ensure Web3Forms API Key is Set
-    formData.append("access_key", import.meta.env.VITE_WEB3FORMS_KEY || "b06ce295-6dd0-4c79-a7ee-9bf4baa29b99");
-
-
-    // ✅ Prevent Web3Forms Redirection
-    formData.append("redirect", "false");
-
-    // ✅ Debug: Log Form Data Before Sending
-    console.log("Form Data Entries:", [...formData.entries()]);
+    // ✅ Prepare form data for EmailJS
+    const formData = {
+      name: event.target.name.value,
+      email: event.target.email.value,
+      message: event.target.message.value,
+    };
 
     // Basic validation
-    const name = formData.get("name").trim();
-    const email = formData.get("email").trim();
-    const message = formData.get("message").trim();
-
-    if (!name || !email || !message) {
+    if (!formData.name || !formData.email || !formData.message) {
       toast.error("All fields are required! 🚨", { position: "top-center" });
       return;
     }
 
     // Email format validation
-    if (!/\S+@\S+\.\S+/.test(email)) {
+    if (!/\S+@\S+\.\S+/.test(formData.email)) {
       toast.error("Invalid email format! ❌", { position: "top-center" });
       return;
     }
 
     try {
-      console.log("Sending form data...");
+      console.log("Sending email...");
+      const response = await emailjs.send(
+        "service_nnixq4t", // Replace with your EmailJS Service ID
+        "YOUR_TEMPLATE_ID", // Replace with your EmailJS Template ID
+        formData,
+        "YOUR_PUBLIC_KEY" // Replace with your EmailJS Public Key
+      );
 
-      const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST", // ✅ Ensure the method is POST
-        body: formData,
-        headers: { "Accept": "application/json" } // ✅ Ensure JSON response
-      });
+      console.log("Response:", response);
 
-      console.log("Response received:", response);
-
-      const data = await response.json();
-      console.log("Response Data:", data);
-
-      if (data.success) {
+      if (response.status === 200) {
         setResult("Form Submitted Successfully!");
-        toast.success("✅ Message sent!", { position: "top-center" });
-
+        toast.success("✅ Message sent successfully!", { position: "top-center" });
         event.target.reset(); // ✅ Reset form after submission
       } else {
-        console.log("Error:", data);
-        toast.error(`❌ ${data.message}`, { position: "top-center" });
+        throw new Error("Email sending failed");
       }
     } catch (error) {
-      console.error("Fetch Error:", error);
+      console.error("EmailJS Error:", error);
       toast.error("❌ Failed to send. Try again.", { position: "top-center" });
     }
   };
@@ -118,8 +105,6 @@ const Contact = () => {
           <button type="submit" className="contact-submit">
             Submit now
           </button>
-
-          {/* {result && <p className="form-result">{result}</p>} */}
         </form>
       </div>
 

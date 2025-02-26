@@ -23,6 +23,11 @@ const Services_Data = [
         s_no:"05",
         s_name:"Version Control & Collaboration",
         s_desc:"I use Git, GitHub, and CI/CD pipelines to collaborate effectively in software development projects."
+    },
+    {
+        s_no:"06",
+        s_name:"API Development",
+        s_desc:"I design and implement RESTful APIs to enable seamless communication between frontend and backend systems."
     }
 ]
  

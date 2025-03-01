@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./Navbar.css";
 import logo from "../../assets/edwin.svg";
-import underline from "../../assets/nav_underline.svg";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import menuOpenIcon from "../../assets/menu_open.svg";
 import menuCloseIcon from "../../assets/menu_close.svg";
@@ -28,15 +27,24 @@ const Navbar = () => {
 
         {["home", "about", "services", "work", "contact"].map((item) => (
           <li key={item}>
-            <AnchorLink className="anchor-link" offset={50} href={`#${item}`} onClick={() => handleMenuClick(item)}>
-              <p> {item.charAt(0).toUpperCase() + item.slice(1)} </p>
+            <AnchorLink
+              className={`anchor-link ${menu === item ? "active-link" : ""}`}
+              offset={50}
+              href={`#${item}`}
+              onClick={() => handleMenuClick(item)}
+            >
+              {item.charAt(0).toUpperCase() + item.slice(1)}
             </AnchorLink>
-            {menu === item && <img src={underline} alt={item} />}
           </li>
         ))}
       </ul>
       <div className="nav-connect">
-        <AnchorLink className="anchor-link" offset={50} href="#contact" onClick={() => handleMenuClick("contact")}>
+        <AnchorLink 
+          className={`anchor-link ${menu === "contact" ? "active-link" : ""}`}
+          offset={50} 
+          href="#contact" 
+          onClick={() => handleMenuClick("contact")}
+        >
           Connect With Me
         </AnchorLink>
       </div>

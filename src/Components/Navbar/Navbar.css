@@ -40,9 +40,12 @@
     opacity: 0.8;
 }
 
-.nav-menu li img {
-    display: flex;
-    margin: auto;
+/* Active Link Styling */
+.active-link {
+    color: #DA7C25 !important;  /* Change text color */
+    font-weight: bold;
+    border-bottom: 2px solid #DA7C25; /* Optional underline effect */
+    padding-bottom: 5px;
 }
 
 .anchor-link {

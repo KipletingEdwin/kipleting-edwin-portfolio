@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./Navbar.css";
 import logo from "../../assets/edwin.svg";
 import AnchorLink from "react-anchor-link-smooth-scroll";
-import { FaBars, FaTimes } from "react-icons/fa"; // Import icons
+import { FaBars, FaTimes } from "react-icons/fa"; 
 
 const Navbar = () => {
   const [menu, setMenu] = useState("home");

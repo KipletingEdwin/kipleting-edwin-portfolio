@@ -1,6 +1,5 @@
-import React from "react";
 import "./About.css";
-import theme_pattern from "../../assets/theme_pattern.svg";
+// import theme_pattern from "../../assets/theme_pattern.svg";
 import profile_img from "../../assets/profile.jpg";
 import { motion } from "framer-motion"; // Import animation library
 
@@ -10,7 +9,7 @@ const About = () => {
       {/* Section Title */}
       <div className="about-title">
         <h1>About Me</h1>
-        <img src={theme_pattern} alt="theme" />
+        {/* <img src={theme_pattern} alt="theme" /> */}
       </div>
 
       <div className="about-sections">

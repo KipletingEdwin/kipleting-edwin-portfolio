@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./Contact.css";
-import theme_pattern from "../../assets/theme_pattern.svg";
+// import theme_pattern from "../../assets/theme_pattern.svg";
 import mail_icon from "../../assets/mail_icon.svg";
 import location_icon from "../../assets/location_icon.svg";
 import call_icon from "../../assets/call_icon.svg";
@@ -66,7 +66,7 @@ const Contact = () => {
         viewport={{ once: true }}
       >
         <h1>Get in Touch</h1>
-        <img src={theme_pattern} alt="theme" />
+        {/* <img src={theme_pattern} alt="theme" /> */}
       </motion.div>
 
       <div className="contact-section">

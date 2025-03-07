@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./Services.css";
-import theme_pattern from "../../assets/theme_pattern.svg";
 import Services_Data from "../../assets/services_data";
 import arrow_icon from "../../assets/arrow_icon.svg";
 import { motion } from "framer-motion"; // Import animation library
@@ -17,7 +16,7 @@ const Services = () => {
       {/* Section Title */}
       <div className="services-title">
         <h1>My Services</h1>
-        <img src={theme_pattern} alt="theme" />
+        {/* <img src={theme_pattern} alt="theme" /> */}
       </div>
 
       {/* Services Grid */}

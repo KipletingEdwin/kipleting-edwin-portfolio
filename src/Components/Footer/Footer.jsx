@@ -1,4 +1,3 @@
-import React from "react";
 import "./Footer.css";
 import footer_logo from "../../assets/edwin.svg";
 import { motion } from "framer-motion"; // Import animation library
@@ -18,8 +17,9 @@ const Footer = () => {
         <div className="footer-top-left">
           <img src={footer_logo} alt="footer-logo" />
           <p>
-            I am a frontend developer from Hatfield, Hertfordshire, United
-            Kingdom, with 10 years of experience in companies like Microsoft, Google, and Tesla.
+          I am a passionate frontend developer based in Hatfield, Hertfordshire, United Kingdom, eager to build
+           modern and user-friendly web applications. I am continuously learning and working on projects to
+            improve my skills in JavaScript, React,Java, Ruby on Rails and web technologies.
           </p>
         </div>
 

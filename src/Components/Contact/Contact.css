@@ -2,59 +2,149 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     gap: 80px;
     margin: 80px 170px;
+}
+
+/* Styled Section Title (Replacing theme_pattern.svg) */
+.contact-title {
+    position: relative;
     text-align: center;
-}
-
-.contact-title h1 {
     font-size: 80px;
+    font-weight: 600;
 }
 
+/* Pseudo-element for decorative effect */
+.contact-title::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    right: -30px;
+    width: 80px;
+    height: 80px;
+    background: radial-gradient(circle, rgba(218,124,37,0.5) 20%, rgba(185,35,225,0.3) 80%);
+    border-radius: 50%;
+    opacity: 0.7;
+    z-index: -1;
+}
+
+/* Contact Section Layout */
 .contact-section {
     display: flex;
     gap: 150px;
+    justify-content: space-between;
     align-items: center;
 }
 
+/* Left Side - Contact Details */
 .contact-left {
     display: flex;
     flex-direction: column;
     gap: 30px;
-    text-align: left;
 }
 
 .contact-left h1 {
-    font-size: 70px;
-    color: #DA7C25;
+    font-size: 60px;
+    font-weight: 700;
+    background: linear-gradient(270deg, #DF8908 80%, #B415FF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.contact-left p {
+    max-width: 550px;
+    color: #D8D8D8;
+    font-size: 20px;
+    line-height: 35px;
+}
+
+/* Contact Details */
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-size: 22px;
 }
 
 .contact-detail {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 15px;
 }
 
-.contact-detail a {
+.contact-detail img {
+    width: 30px;
+    opacity: 0.8;
+}
+
+.contact-detail a, .contact-detail p {
     text-decoration: none;
     color: white;
+    transition: color 0.3s;
 }
 
+.contact-detail a:hover {
+    color: #DA7C25;
+}
+
+/* Contact Form */
 .contact-right {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 30px;
+    border-radius: 10px;
     width: 100%;
     max-width: 500px;
 }
 
-.contact-right input, .contact-right textarea {
-    padding: 15px;
-    background: #32323c;
-    color: #A0A0A0;
-    border: none;
+/* Form Labels */
+.contact-right label {
+    font-size: 18px;
+    color: #D8D8D8;
+    font-weight: 500;
 }
 
+/* Input Fields */
+.contact-right input, .contact-right textarea {
+    border: none;
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: 5px;
+    background: #32323c;
+    color: white;
+    font-size: 18px;
+    box-sizing: border-box;
+}
+
+/* Textarea */
+.contact-right textarea {
+    min-height: 120px;
+    resize: none;
+}
+
+/* Submit Button */
+.contact-submit {
+    border: none;
+    color: white;
+    background: linear-gradient( #DF8908 -5.09%, #B415FF 106.28%);
+    font-size: 20px;
+    padding: 15px 40px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Button Hover Effect */
+.contact-submit:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 10px rgba(180, 21, 255, 0.3);
+    transition: 0.3s;
+}
+
+/* Error Message Styling */
 .error {
     border: 2px solid red;
 }
@@ -62,18 +152,49 @@
 .error-text {
     color: red;
     font-size: 14px;
+    margin-top: -10px;
 }
 
-.contact-submit {
-    padding: 15px;
-    background: linear-gradient(90deg, #DF8908, #B415FF);
-    cursor: pointer;
-    border-radius: 5px;
-}
-
+/* Responsive Design */
 @media (max-width: 768px) {
+    .contact {
+        gap: 50px;
+        margin: 50px 20px;
+        align-items: start;
+    }
+
+    .contact-title {
+        font-size: 50px;
+    }
+
+    .contact-title::after {
+        width: 50px;
+        height: 50px;
+        bottom: -5px;
+        right: -10px;
+    }
+
     .contact-section {
         flex-direction: column;
+        width: 100%;
         gap: 40px;
+        align-items: center;
+    }
+
+    .contact-left h1 {
+        font-size: 40px;
+    }
+
+    .contact-left p {
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .contact-detail {
+        justify-content: center;
+    }
+
+    .contact-right {
+        width: 90%;
     }
 }

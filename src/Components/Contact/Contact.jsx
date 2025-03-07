@@ -4,36 +4,36 @@ import theme_pattern from "../../assets/theme_pattern.svg";
 import mail_icon from "../../assets/mail_icon.svg";
 import location_icon from "../../assets/location_icon.svg";
 import call_icon from "../../assets/call_icon.svg";
-import emailjs from "@emailjs/browser"; 
-
+import emailjs from "@emailjs/browser";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { motion } from "framer-motion"; // Import animation library
 
 const Contact = () => {
-  const [result, setResult] = useState(""); 
+  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [errors, setErrors] = useState({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const validateForm = () => {
+    let newErrors = {};
+    if (!formData.name.trim()) newErrors.name = "Name is required!";
+    if (!formData.email.trim()) newErrors.email = "Email is required!";
+    if (!/\S+@\S+\.\S+/.test(formData.email)) newErrors.email = "Invalid email format!";
+    if (!formData.message.trim()) newErrors.message = "Message cannot be empty!";
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
 
   const onSubmit = async (event) => {
     event.preventDefault();
-    setResult("Sending...");
-
-    const formData = {
-      name: event.target.name.value,
-      email: event.target.email.value,
-      message: event.target.message.value,
-    };
-
-    if (!formData.name || !formData.email || !formData.message) {
-      toast.error("All fields are required! 🚨", { position: "top-center" });
+    if (!validateForm()) {
+      toast.error("Please fix the errors before submitting! 🚨", { position: "top-center" });
       return;
     }
 
-    if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      toast.error("Invalid email format! ❌", { position: "top-center" });
-      return;
-    }
+    setIsSubmitting(true);
 
     try {
-      console.log("Sending email...");
       const response = await emailjs.send(
         "service_nnixq4t", // Replace with your EmailJS Service ID
         "YOUR_TEMPLATE_ID", // Replace with your EmailJS Template ID
@@ -41,72 +41,106 @@ const Contact = () => {
         "YOUR_PUBLIC_KEY" // Replace with your EmailJS Public Key
       );
 
-      console.log("Response:", response);
-
       if (response.status === 200) {
-        setResult("Form Submitted Successfully!");
         toast.success("✅ Message sent successfully!", { position: "top-center" });
-        event.target.reset(); 
+        setFormData({ name: "", email: "", message: "" }); // Reset form
       } else {
         throw new Error("Email sending failed");
       }
     } catch (error) {
       console.error("EmailJS Error:", error);
       toast.error("❌ Failed to send. Try again.", { position: "top-center" });
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
   return (
-    <div className="contact" id="contact">
-      <div className="contact-title">
-        <h1>Get in touch</h1>
+    <section className="contact" id="contact">
+      {/* Section Title */}
+      <motion.div
+        className="contact-title"
+        initial={{ opacity: 0, y: -30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+        viewport={{ once: true }}
+      >
+        <h1>Get in Touch</h1>
         <img src={theme_pattern} alt="theme" />
-      </div>
+      </motion.div>
+
       <div className="contact-section">
-        <div className="contact-left">
-          <h1>Let's talk</h1>
+        {/* Contact Details */}
+        <motion.div
+          className="contact-left"
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true }}
+        >
+          <h1>Let's Talk</h1>
           <p>
-            I'm currently available to take on new projects, so feel free to
-            send me a message about anything that you want me to work on. You
-            can contact me anytime.
+            I'm available for new projects! Feel free to reach out about anything.
           </p>
           <div className="contact-details">
             <div className="contact-detail">
               <img src={mail_icon} alt="Email" />
-              <p> kipletingedwin4@gmail.com </p>
+              <a href="mailto:kipletingedwin4@gmail.com">kipletingedwin4@gmail.com</a>
             </div>
-
             <div className="contact-detail">
               <img src={call_icon} alt="Phone" />
-              <p> +447521461628 </p>
+              <a href="tel:+447521461628">+447521461628</a>
             </div>
-
             <div className="contact-detail">
               <img src={location_icon} alt="Location" />
-              <p> Hatfield, Hertfordshire, United Kingdom </p>
+              <p>Hatfield, Hertfordshire, UK</p>
             </div>
           </div>
-        </div>
+        </motion.div>
 
-        <form onSubmit={onSubmit} className="contact-right">
-          <label htmlFor="name">Your Name</label>
-          <input type="text" id="name" name="name" placeholder="Enter your name" required />
+        {/* Contact Form */}
+        <motion.form
+          className="contact-right"
+          onSubmit={onSubmit}
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true }}
+        >
+          <label>Your Name</label>
+          <input
+            type="text"
+            value={formData.name}
+            onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+            className={errors.name ? "error" : ""}
+          />
+          {errors.name && <span className="error-text">{errors.name}</span>}
 
-          <label htmlFor="email">Your Email</label>
-          <input type="email" id="email" name="email" placeholder="Enter your email" required />
+          <label>Your Email</label>
+          <input
+            type="email"
+            value={formData.email}
+            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+            className={errors.email ? "error" : ""}
+          />
+          {errors.email && <span className="error-text">{errors.email}</span>}
 
-          <label htmlFor="message">Write your message here</label>
-          <textarea id="message" name="message" rows="8" placeholder="Enter your message" required></textarea>
+          <label>Message</label>
+          <textarea
+            value={formData.message}
+            onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+            className={errors.message ? "error" : ""}
+          />
+          {errors.message && <span className="error-text">{errors.message}</span>}
 
           <button type="submit" className="contact-submit">
-            Submit now
+            {isSubmitting ? "Sending..." : "Submit Now"}
           </button>
-        </form>
+        </motion.form>
       </div>
 
-      {/* Toast Notification Component */}
       <ToastContainer />
-    </div>
+    </section>
   );
 };
 

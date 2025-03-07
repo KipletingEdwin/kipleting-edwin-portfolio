@@ -23,24 +23,17 @@ const Footer = () => {
           </p>
         </div>
 
-        {/* Right Side - Subscribe Section */}
-        <div className="footer-top-right">
-          <div className="footer-email-input">
-            <input type="email" placeholder="Enter your email" />
-            <button className="footer-subscribe">Subscribe</button>
-          </div>
-          {/* Social Media Icons */}
-          <div className="footer-socials">
-            <a href="https://github.com/yourprofile" target="_blank" rel="noopener noreferrer">
-              <FaGithub />
-            </a>
-            <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer">
-              <FaLinkedin />
-            </a>
-            <a href="https://twitter.com/yourprofile" target="_blank" rel="noopener noreferrer">
-              <FaTwitter />
-            </a>
-          </div>
+        {/* Right Side - Social Media Icons */}
+        <div className="footer-socials">
+          <a href="https://github.com/yourprofile" target="_blank" rel="noopener noreferrer">
+            <FaGithub />
+          </a>
+          <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer">
+            <FaLinkedin />
+          </a>
+          <a href="https://twitter.com/yourprofile" target="_blank" rel="noopener noreferrer">
+            <FaTwitter />
+          </a>
         </div>
       </div>
 

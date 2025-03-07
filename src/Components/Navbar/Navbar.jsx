@@ -1,47 +1,32 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./Navbar.css";
 import logo from "../../assets/edwin.svg";
 import AnchorLink from "react-anchor-link-smooth-scroll";
-import menuOpenIcon from "../../assets/menu_open.svg";
-import menuCloseIcon from "../../assets/menu_close.svg";
+import { FaBars, FaTimes } from "react-icons/fa"; // Import icons
 
 const Navbar = () => {
   const [menu, setMenu] = useState("home");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   const handleMenuClick = (menuItem) => {
     setMenu(menuItem);
-    setIsMenuOpen(false); // Close menu on mobile after selection
+    setIsMenuOpen(false);
   };
 
   return (
-    <nav className={`navbar ${isScrolled ? "scrolled" : ""}`}>
-      <img src={logo} alt="logo" className="nav-logo" />
+    <nav className="navbar">
+      <img src={logo} alt="logo" />
 
-      <button
-        className="nav-mob-open"
-        onClick={() => setIsMenuOpen(true)}
-        aria-label="Open Menu"
-      >
-        <img src={menuOpenIcon} alt="Open Menu" />
+      {/* Hamburger Menu Icon */}
+      <button className="nav-mob-open" onClick={() => setIsMenuOpen(true)} aria-label="Open Menu">
+        <FaBars size={30} />
       </button>
 
+      {/* Mobile Navigation Menu */}
       <ul className={`nav-menu ${isMenuOpen ? "open" : ""}`}>
-        <button
-          className="nav-mob-close"
-          onClick={() => setIsMenuOpen(false)}
-          aria-label="Close Menu"
-        >
-          <img src={menuCloseIcon} alt="Close Menu" />
+        {/* Close Menu Icon */}
+        <button className="nav-mob-close" onClick={() => setIsMenuOpen(false)} aria-label="Close Menu">
+          <FaTimes size={30} />
         </button>
 
         {["home", "about", "services", "work", "contact"].map((item) => (
@@ -59,10 +44,10 @@ const Navbar = () => {
       </ul>
 
       <div className="nav-connect">
-        <AnchorLink
+        <AnchorLink 
           className={`anchor-link ${menu === "contact" ? "active-link" : ""}`}
-          offset={50}
-          href="#contact"
+          offset={50} 
+          href="#contact" 
           onClick={() => handleMenuClick("contact")}
         >
           Connect With Me

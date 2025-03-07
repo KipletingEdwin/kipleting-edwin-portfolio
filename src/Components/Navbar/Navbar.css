@@ -1,32 +1,15 @@
+/* Navbar Container */
 .navbar {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin: 20px 170px;
-    padding: 15px 30px;
-    background: transparent;
-    transition: all 0.4s ease-in-out;
-}
-
-/* Navbar on scroll */
-.navbar.scrolled {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: rgba(20, 20, 20, 0.9);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    z-index: 100;
-    padding: 15px 50px;
 }
 
 /* Logo */
-.nav-logo {
+.navbar img {
     height: 50px;
-    transition: transform 0.3s ease-in-out;
-}
-
-.nav-logo:hover {
-    transform: scale(1.05);
+    cursor: pointer;
 }
 
 /* Navigation Menu */
@@ -38,17 +21,11 @@
     font-size: 20px;
 }
 
-/* Mobile Menu Button */
-.nav-mob-open, .nav-mob-close {
-    display: none;
-    cursor: pointer;
-}
-
 /* Connect Button */
 .nav-connect {
     padding: 15px 35px;
     border-radius: 50px;
-    background: linear-gradient(267deg,#DA7C25 0.36%, #B923E1 102.06%);
+    background: linear-gradient(267deg, #DA7C25 0.36%, #B923E1 102.06%);
     font-size: 20px;
     cursor: pointer;
     transition: 0.3s ease-in-out;
@@ -60,16 +37,49 @@
     opacity: 0.9;
 }
 
+/* Menu Items */
+.nav-menu li {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.nav-menu li:hover {
+    opacity: 0.8;
+}
+
 /* Active Link Styling */
 .active-link {
     color: #DA7C25 !important;
     font-weight: bold;
-    background: rgba(218, 124, 37, 0.2);
-    padding: 5px 10px;
-    border-radius: 5px;
+    border-bottom: 2px solid #DA7C25;
+    padding-bottom: 5px;
 }
 
-/* Mobile Responsive Design */
+/* Anchor Links */
+.anchor-link {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s ease-in-out;
+}
+
+.anchor-link:hover {
+    color: #DA7C25;
+}
+
+/* Mobile Menu Button */
+.nav-mob-open,
+.nav-mob-close {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+/* Mobile Menu Styling */
 @media (max-width: 768px) {
     .navbar {
         margin: 20px 50px;
@@ -79,23 +89,26 @@
         display: none;
     }
 
+    /* Show Hamburger Menu on Mobile */
     .nav-mob-open {
-        display: block; 
+        display: block;
         position: fixed;
         right: 20px;
         top: 20px;
         z-index: 5;
-        width: 40px;
+        font-size: 30px;
     }
 
+    /* Close Button */
     .nav-mob-close {
         display: block;
         position: absolute;
         top: 20px;
         right: 20px;
-        width: 30px;
+        font-size: 30px;
     }
 
+    /* Mobile Menu Styling */
     .nav-menu {
         position: fixed;
         flex-direction: column;
@@ -118,11 +131,5 @@
     .nav-menu li {
         font-size: 24px;
         padding: 10px 0;
-    }
-
-    .active-link {
-        background: rgba(218, 124, 37, 0.3);
-        padding: 10px 15px;
-        border-radius: 8px;
     }
 }

@@ -1,10 +1,35 @@
 .navbar {
     display: flex;
-    align-items: center; 
+    align-items: center;
     justify-content: space-between;
     margin: 20px 170px;
+    padding: 15px 30px;
+    background: transparent;
+    transition: all 0.4s ease-in-out;
 }
 
+/* Navbar on scroll */
+.navbar.scrolled {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(20, 20, 20, 0.9);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+    padding: 15px 50px;
+}
+
+/* Logo */
+.nav-logo {
+    height: 50px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.nav-logo:hover {
+    transform: scale(1.05);
+}
+
+/* Navigation Menu */
 .nav-menu {
     display: flex;
     align-items: center;
@@ -13,6 +38,13 @@
     font-size: 20px;
 }
 
+/* Mobile Menu Button */
+.nav-mob-open, .nav-mob-close {
+    display: none;
+    cursor: pointer;
+}
+
+/* Connect Button */
 .nav-connect {
     padding: 15px 35px;
     border-radius: 50px;
@@ -28,47 +60,16 @@
     opacity: 0.9;
 }
 
-.nav-menu li {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
-    transition: 0.3s ease-in-out;
-}
-
-.nav-menu li:hover {
-    opacity: 0.8;
-}
-
 /* Active Link Styling */
 .active-link {
-    color: #DA7C25 !important;  /* Change text color */
+    color: #DA7C25 !important;
     font-weight: bold;
-    border-bottom: 2px solid #DA7C25; /* Optional underline effect */
-    padding-bottom: 5px;
+    background: rgba(218, 124, 37, 0.2);
+    padding: 5px 10px;
+    border-radius: 5px;
 }
 
-.anchor-link {
-    text-decoration: none;
-    color: white;
-    transition: color 0.3s ease-in-out;
-}
-
-.anchor-link:hover {
-    color: #DA7C25;
-}
-
-.nav-mob-open {
-    display: none;
-    cursor: pointer;
-}
-
-.nav-mob-close {
-    display: none;
-    cursor: pointer;
-}
-
-/* Responsive Design */
+/* Mobile Responsive Design */
 @media (max-width: 768px) {
     .navbar {
         margin: 20px 50px;
@@ -117,5 +118,11 @@
     .nav-menu li {
         font-size: 24px;
         padding: 10px 0;
+    }
+
+    .active-link {
+        background: rgba(218, 124, 37, 0.3);
+        padding: 10px 15px;
+        border-radius: 8px;
     }
 }

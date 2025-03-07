@@ -1,12 +1,23 @@
-
-*{
+/* Apply a global reset */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box; /* Prevents layout issues */
+    scroll-behavior: smooth; /* Enables smooth scrolling */
 }
 
-body{
+/* Global Styles */
+body {
     height: 100vh;
     background: #161513;
     color: white;
-    font-family: 'outfit';
+    font-family: 'Outfit', sans-serif;
+    overflow-x: hidden; /* Prevents horizontal scrolling */
+}
+
+/* Ensure images and elements don't overflow */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
 }

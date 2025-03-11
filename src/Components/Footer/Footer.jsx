@@ -25,13 +25,13 @@ const Footer = () => {
 
         {/* Right Side - Social Media Icons */}
         <div className="footer-socials">
-          <a href="https://github.com/yourprofile" target="_blank" rel="noopener noreferrer">
+          <a href="https://github.com/KipletingEdwin" target="_blank" rel="noopener noreferrer">
             <FaGithub />
           </a>
-          <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.linkedin.com/in/kipleting-edwin/" target="_blank" rel="noopener noreferrer">
             <FaLinkedin />
           </a>
-          <a href="https://twitter.com/yourprofile" target="_blank" rel="noopener noreferrer">
+          <a href="https://x.com/RotichKEdwin" target="_blank" rel="noopener noreferrer">
             <FaTwitter />
           </a>
         </div>

@@ -2,6 +2,7 @@ import "./Hero.css";
 import profile_img from "../../assets/profile.jpg";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { motion } from "framer-motion"; // Import animation library
+import resume from "../../assets/KipletingEdwin_CV.pdf";
 
 const Hero = () => {
   return (
@@ -46,7 +47,7 @@ const Hero = () => {
         <AnchorLink className="hero-connect" offset={50} href="#contact">
           Connect With Me
         </AnchorLink>
-        <a href="/resume.pdf" download className="hero-resume">
+        <a href={resume} download className="hero-resume">
           My Resume
         </a>
       </motion.div>

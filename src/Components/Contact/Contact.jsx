@@ -35,15 +35,15 @@ const Contact = () => {
 
     try {
       const response = await emailjs.send(
-        "service_nnixq4t", // Replace with your EmailJS Service ID
-        "YOUR_TEMPLATE_ID", // Replace with your EmailJS Template ID
+        "service_cxbqpxe", 
+        "template_mbjhj3t", 
         formData,
-        "YOUR_PUBLIC_KEY" // Replace with your EmailJS Public Key
+        "4ujZMtpMTuQBs6Jtw" 
       );
 
       if (response.status === 200) {
         toast.success("✅ Message sent successfully!", { position: "top-center" });
-        setFormData({ name: "", email: "", message: "" }); // Reset form
+        setFormData({ name: "", email: "", message: "" }); 
       } else {
         throw new Error("Email sending failed");
       }

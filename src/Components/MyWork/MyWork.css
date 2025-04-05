@@ -86,6 +86,8 @@
     .mywork-container{
         grid-template-columns: 1fr 1fr;
         gap: 30px;
+        display: flex;
+        flex-direction: column;
     } 
 
     .mywork-container img{

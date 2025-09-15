@@ -50,13 +50,13 @@ const About = () => {
           {/* Animated Skill Bars */}
           <div className="about-skills">
             {[
-              { name: "HTML & CSS", level: 80 },
+              { name: "HTML & CSS", level: 70 },
               { name: "JavaScript", level: 85 },
               { name: "TypeScript", level: 70 },
               { name: "React JS", level: 90 },
-              { name: "Angular JS", level: 70 },
+              { name: "Angular JS", level: 65 },
               { name: "Ionic Frameworks", level: 80 },
-              { name: "Ruby on Rails", level: 75 },
+              { name: "Ruby on Rails", level: 70 },
             ].map((skill, index) => (
               <div key={index} className="about-skill">
                 <p>{skill.name}</p>

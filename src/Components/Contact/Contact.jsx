@@ -87,10 +87,10 @@ const Contact = () => {
               <img src={mail_icon} alt="Email" />
               <a href="mailto:kipletingedwin4@gmail.com">kipletingedwin4@gmail.com</a>
             </div>
-            <div className="contact-detail">
+            {/* <div className="contact-detail">
               <img src={call_icon} alt="Phone" />
               <a href="tel:+447521461628">+447521461628</a>
-            </div>
+            </div> */}
             <div className="contact-detail">
               <img src={location_icon} alt="Location" />
               <p>Hatfield, Hertfordshire, UK</p>
